@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #29292E;
+  --second-color: #02799D;
+  --bg-color: #E1E1E6;
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+body {
+  color: var(--primary-color);
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 18rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+#timer {
+  font-size: 9.6rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#controls {
+  margin-top: 1.6rem;
+  gap: 1rem;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 3.2rem;
+}
+
+#sounds button {
+  background-color: var(--bg-color);
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2.4rem;
+  transition: all 0.3s;
+}
+#sounds button:hover,
+#sounds button.active {
+  background-color: var(--second-color);
+}
+#sounds button:hover svg path,
+#sounds button.active svg path {
+  fill: white;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 6.4rem;
+  transition: all 0.3s;
+}
+button:hover {
+  color: var(--second-color);
+}
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.disabled:hover {
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+@media (max-width: 980px) {
+  #app {
+    grid-template-columns: 1fr;
+    gap: 10rem;
+  }
+}
